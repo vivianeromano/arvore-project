@@ -1,10 +1,15 @@
 import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+import Contribution from './pages/Contribution';
 
 function App() {
     return (
-        <div className="App">
-            <h1>Teste</h1>
-        </div>
+        <BrowserRouter>
+            <Switch>
+                <Route path="/" exact component={Contribution} />
+            </Switch>
+        </BrowserRouter>
     );
 }
 
