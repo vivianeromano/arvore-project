@@ -1,5 +1,7 @@
 import React from 'react';
 
+// COMPONENTS
+import PixelBoard from '../PixelBoard';
 // STYLES
 import * as S from './styles';
 
@@ -8,11 +10,11 @@ function Legend() {
         <S.LegendContribution>
             Less
             <ul>
-                <li className="day-l1-bg"> </li>
-                <li className="day-l2-bg"> </li>
-                <li className="day-l3-bg"> </li>
-                <li className="day-l4-bg"> </li>
-                <li className="day-l5-bg"> </li>
+                <PixelBoard />
+                <PixelBoard type="l2" />
+                <PixelBoard type="l3" />
+                <PixelBoard type="l4" />
+                <PixelBoard type="l5" />
             </ul>
             More
         </S.LegendContribution>

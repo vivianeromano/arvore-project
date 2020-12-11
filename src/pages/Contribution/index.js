@@ -5,6 +5,8 @@ import { Row, Col, Card } from 'react-bootstrap';
 import Footer from '../../components/Footer';
 import MenuYear from '../../components/MenuYear';
 
+// CONTAINERS
+import ContributionBoard from '../../containers/ContributionBoard';
 // SERVICES
 import {
     listContributionsService,
@@ -66,6 +68,7 @@ function Contribution() {
                 <Col>
                     <S.Card>
                         <Card.Body>
+                            <ContributionBoard />
                             <Footer />
                         </Card.Body>
                     </S.Card>

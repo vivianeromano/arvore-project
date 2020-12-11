@@ -175,20 +175,24 @@ const data = [
     { date: '2017-06-06', count: 32 },
     { date: '2017-06-08', count: 48 },
 ];
-const currentYear = new Date().getFullYear();
-const t = data
-    .map((value) => ({
-        year: new Date(value.date).getFullYear(),
-        count: value.count,
-    }))
-    .reduce(
-        (acc, elm) => {
-            if (acc[elm.year]) {
-                return { ...acc, [elm.year]: acc[elm.year] + elm.count };
-            }
-            return { ...acc, [elm.year]: elm.count };
-        },
-        { [currentYear]: 0 }
-    );
 
-console.log(t);
+const months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+const daysOfYear = months.reduce((acc, month) => {
+    const totalDayMonth = new Date(2020, month, 0).getDate();
+    const days = Array.from({ length: totalDayMonth }, (_, i) => i + 1).map(
+        (day) => ({
+            day,
+            month,
+        })
+    );
+    return [...acc, ...days];
+}, []);
+
+// console.log(splitAray(daysOfYear, 52));
+function meudeus(array, max, t) {
+    console.log(array, max);
+    if (array.length === 0) return t;
+    return meudeus(array.slice(max), max, [...t, array.slice(0, max)]);
+}
+
+console.log(meudeus(daysOfYear, 52, []));

@@ -4,6 +4,8 @@ import CardBootstrap from 'react-bootstrap/Card';
 
 export const Container = styled(ContainerBootstrap)`
     margin-top: 10%;
+    max-width: 860px;
+    padding: 1em 10px;
 `;
 
 export const Card = styled(CardBootstrap)`
