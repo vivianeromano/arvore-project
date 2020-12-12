@@ -14,8 +14,12 @@ function PixelBoard({ type, data }) {
             delay={{ show: 250, hide: 400 }}
             overlay={
                 <Tooltip>
-                    <strong>No contributions</strong> on{' '}
-                    {convertMonth[data.month]} {data.day}, {data.year}
+                    <strong>
+                        {data.count > 0
+                            ? `${data.count} contributions`
+                            : 'No contributions'}
+                    </strong>{' '}
+                    on {convertMonth[data.month]} {data.day}, {data.year}
                 </Tooltip>
             }
         >
@@ -36,6 +40,7 @@ PixelBoard.propTypes = {
         month: PropTypes.number,
         day: PropTypes.number,
         year: PropTypes.number,
+        count: PropTypes.number,
     }),
 };
 

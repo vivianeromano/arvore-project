@@ -30,3 +30,19 @@ export function getContributionOnYearsService(data, currentYear) {
             { [currentYear]: 0 }
         );
 }
+
+export function getContributionByYear(contributions, year) {
+    return contributions.filter((value) => {
+        const date = new Date(value.date);
+        return date.getFullYear() === parseInt(year, 10);
+    });
+}
+
+export function getContributionDay(contributions, month, day) {
+    return contributions
+        .filter((value) => {
+            const date = new Date(value.date);
+            return date.getMonth() + 1 === month && date.getDate() === day;
+        })
+        .reduce((acc, elm) => acc + elm.count, 0);
+}

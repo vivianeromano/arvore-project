@@ -10,7 +10,11 @@ function Footer() {
         <footer>
             <Row>
                 <Col className="align-self-center">
-                    <S.LinkContributions href="https://docs.github.com/en/free-pro-team@latest/github/setting-up-and-managing-your-github-profile/why-are-my-contributions-not-showing-up-on-my-profile">
+                    <S.LinkContributions
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="https://docs.github.com/en/free-pro-team@latest/github/setting-up-and-managing-your-github-profile/why-are-my-contributions-not-showing-up-on-my-profile"
+                    >
                         Learn how we count contributions.
                     </S.LinkContributions>
                 </Col>

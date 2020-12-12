@@ -176,23 +176,13 @@ const data = [
     { date: '2017-06-08', count: 48 },
 ];
 
-const months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-const daysOfYear = months.reduce((acc, month) => {
-    const totalDayMonth = new Date(2020, month, 0).getDate();
-    const days = Array.from({ length: totalDayMonth }, (_, i) => i + 1).map(
-        (day) => ({
-            day,
-            month,
-        })
-    );
-    return [...acc, ...days];
-}, []);
+const test = data.filter((value) => {
+    const date = new Date(value.date);
+    return date.getFullYear() === 2017;
+});
+const test2 = test.filter((value) => {
+    const date = new Date(value.date);
+    return date.getMonth() + 1 === 5 && date.getDate() === 3;
+});
 
-// console.log(splitAray(daysOfYear, 52));
-function meudeus(array, max, t) {
-    console.log(array, max);
-    if (array.length === 0) return t;
-    return meudeus(array.slice(max), max, [...t, array.slice(0, max)]);
-}
-
-console.log(meudeus(daysOfYear, 52, []));
+console.log(test2);
