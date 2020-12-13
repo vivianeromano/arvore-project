@@ -49,8 +49,8 @@ function ContributionBoard({ yearSelected }) {
             return 'l1';
         };
 
-        return splitArray(daysOfYear, 7, []).map((group) => (
-            <S.GroupPixel key={shortid.generate()}>
+        return splitArray(daysOfYear, 7).map((group) => (
+            <S.GroupPixel key={shortid.generate()} data-testid="board">
                 {group.map((value) => (
                     <PixelBoard
                         key={shortid.generate()}
@@ -61,7 +61,7 @@ function ContributionBoard({ yearSelected }) {
             </S.GroupPixel>
         ));
     };
-    return <>{board()}</>;
+    return board();
 }
 
 ContributionBoard.propTypes = {

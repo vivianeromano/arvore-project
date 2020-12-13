@@ -48,12 +48,14 @@ function Contribution() {
             const { data } = await listContributionsService();
             getContributionOnYears(data);
         } catch (error) {
+            // eslint-disable-next-line
             alert(error.message);
         }
     };
 
     useEffect(() => {
         getContributions();
+        // eslint-disable-next-line
     }, []);
 
     return (

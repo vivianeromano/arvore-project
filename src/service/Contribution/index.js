@@ -42,7 +42,7 @@ export function getContributionDay(contributions, month, day) {
     return contributions
         .filter((value) => {
             const date = new Date(value.date);
-            return date.getMonth() + 1 === month && date.getDate() === day;
+            return date.getMonth() + 1 === month && date.getDate() + 1 === day;
         })
         .reduce((acc, elm) => acc + elm.count, 0);
 }

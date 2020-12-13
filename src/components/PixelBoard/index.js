@@ -23,10 +23,10 @@ function PixelBoard({ type, data }) {
                 </Tooltip>
             }
         >
-            <S.Pixel type={type} />
+            <S.Pixel type={type} data-testid="pixel_board" />
         </OverlayTrigger>
     ) : (
-        <S.Pixel type={type} />
+        <S.Pixel type={type} data-testid="pixel_board" />
     );
 }
 
