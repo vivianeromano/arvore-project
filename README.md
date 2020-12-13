@@ -17,7 +17,8 @@ In a separate terminal run the command:
 ```
 json-server --watch db.json --port 3001
 ```
-
+### `yarn`
+This command will install all the dependencies that the project needs to function
 ### `yarn start`
 
 Runs the app in the development mode.\
